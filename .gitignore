@@ -1,0 +1,32 @@
+venv/
+__pycache__/
+.env
+*.pyc
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos temporales
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Archivos de configuración
+.env
+config.py
+
+# Archivos de logs
+*.log
+
+# Archivos de base de datos locales
+*.sqlite3
+
+# Configuraciones de IDEs
+.idea/
+.vscode/
+
+# Otros
+*.swp
+.DS_Store

@@ -1,0 +1,92 @@
+# Modular Connect
+
+── app.py                  # Archivo principal que inicia la aplicación
+── config.py               # Archivo de configuración (configuraciones estáticas)
+── settings.py             # Archivo de configuración (configuraciones específicas)
+── requirements.txt        # Dependencias necesarias de Python
+── .env                    # Variables de entorno (API keys, credenciales, etc.) ubicado en .gitignore
+── manage.py               # Script para ejecutar comandos de la aplicación (común en Django)
+
+── auth/                   # Módulo de autenticación y autorización
+   ── auth.py              # Funciones de autenticación
+   ── models.py            # Modelos relacionados a la autenticación (usuarios, tokens)
+   ── views.py             # Controladores o vistas relacionadas con la autenticación
+   ── permissions.py       # Centralizar la lógica de permisos y acceso.
+   ── auth_utils.py        # módulo para encapsular funciones de autenticación común, como generación y validación de tokens.
+   ── __init__.py
+
+── billing/                # Módulo para manejo de pagos y facturación
+   ── models.py            # Modelos de facturación y pagos
+   ── services.py          # Servicios relacionados con facturación
+   ── views.py             # Controladores para gestión de pagos
+   ── __init__.py
+
+── migrations/             # Archivos de migración de la base de datos 
+
+── docs/                   # Documentación del proyecto
+   ── README.md            # Descripción general del proyecto
+   ── INSTALL.md           # Guía de instalación y configuración
+   ── API_REFERENCE.md     # Documentación de la API (si aplica)
+   ── CHANGELOG.md         # Registro de cambios del proyecto
+
+── database/               # Conexión y configuración de la base de datos
+   ── models.py            # Definición de todos los modelos de datos
+   ── db_connection.py     # Función o clase para conectar a la base de datos
+
+── notifications/          # Módulo para manejo de notificaciones
+   ── models.py            # Modelos de notificaciones
+   ── services.py          # Servicios para enviar notificaciones
+   ── views.py             # Controladores de notificaciones
+   ── __init__.py
+
+── static/                 # Archivos estáticos (imágenes, CSS, JS)
+   ── css/
+   ── js/
+   ── images/
+
+── templates/              # Plantillas HTML (si es una aplicación con interfaz web)
+   ── email/               # Plantillas de correos electrónicos
+   ── web/                 # Plantillas HTML para la web
+
+── tests/                  # Pruebas de la aplicación
+   ── unit/                # Pruebas unitarias para funciones individuales
+   ── integration/         # Pruebas de integración entre módulos
+   ── test_auth.py         # Pruebas de autenticación
+   ── test_users.py        # Pruebas del módulo de usuarios
+   ── test_billing.py      # Pruebas de facturación
+   ── __init__.py
+
+── users/                  # Módulo para manejo de usuarios
+   ── models.py            # Modelos de usuario
+   ── services.py          # Servicios y lógica de negocio para usuarios
+   ── views.py             # Controladores o vistas de usuarios
+   ── __init__.py
+
+── utils/                  # Funciones y clases de utilidad
+   ── api_utils.py         # Funciones para interactuar con APIs externas
+   ── cache_utils.py       # Funciones para manejo de cache y sesiones
+   ── config_utils.py      # Funciones para cargar y manejar configuración
+   ── date_utils.py        # Funciones de manejo de fechas y tiempos
+   ── data_utils.py        # Funciones para transformación y limpieza de datos
+   ── email_utils.py       # Funciones para envío de correos electrónicos
+   ── file_utils.py        # Funciones para leer y escribir archivos
+   ── logging_utils.py     # Funciones para registro de eventos y logs
+   ── math_utils.py        # Funciones matemáticas y estadísticas
+   ── security_utils.py    # Funciones de cifrado y seguridad
+   ── text_utils.py        # Funciones para manipulación de texto
+   ── validation_utils.py  # Funciones de validación de datos de entrada
+   ── __init__.py
+
+
+
+── task/                    # procesamiento en segundo plano (Celery)
+   ── queue_config.py       # configuraciones de la cola
+   ── workers.py            # ejecución de workers
+
+
+
+
+
+
+
+
