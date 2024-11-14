@@ -1,11 +1,10 @@
 # Modular Connect
-
-── app.py                  # Archivo principal que inicia la aplicación
-── config.py               # Archivo de configuración (configuraciones estáticas)
-── settings.py             # Archivo de configuración (configuraciones específicas)
-── requirements.txt        # Dependencias necesarias de Python
-── .env                    # Variables de entorno (API keys, credenciales, etc.) ubicado en .gitignore
-── manage.py               # Script para ejecutar comandos de la aplicación (común en Django)
+app.py                  # Archivo principal que inicia la aplicación
+config.py               # Archivo de configuración (configuraciones estáticas)
+settings.py             # Archivo de configuración (configuraciones específicas)
+requirements.txt        # Dependencias necesarias de Python
+.env                    # Variables de entorno (API keys, credenciales, etc.) ubicado en .gitignore
+manage.py               # Script para ejecutar comandos de la aplicación (común en Django)
 
 ── auth/                   # Módulo de autenticación y autorización
    ── auth.py              # Funciones de autenticación
@@ -21,7 +20,9 @@
    ── views.py             # Controladores para gestión de pagos
    ── __init__.py
 
-── migrations/             # Archivos de migración de la base de datos 
+── database/               # Conexión y configuración de la base de datos
+   ── models.py            # Definición de todos los modelos de datos
+   ── db_connection.py     # Función o clase para conectar a la base de datos
 
 ── docs/                   # Documentación del proyecto
    ── README.md            # Descripción general del proyecto
@@ -29,9 +30,7 @@
    ── API_REFERENCE.md     # Documentación de la API (si aplica)
    ── CHANGELOG.md         # Registro de cambios del proyecto
 
-── database/               # Conexión y configuración de la base de datos
-   ── models.py            # Definición de todos los modelos de datos
-   ── db_connection.py     # Función o clase para conectar a la base de datos
+── migrations/             # Archivos de migración de la base de datos 
 
 ── notifications/          # Módulo para manejo de notificaciones
    ── models.py            # Modelos de notificaciones
@@ -43,6 +42,10 @@
    ── css/
    ── js/
    ── images/
+
+── task/                    # procesamiento en segundo plano (Celery)
+   ── queue_config.py       # configuraciones de la cola
+   ── workers.py            # ejecución de workers
 
 ── templates/              # Plantillas HTML (si es una aplicación con interfaz web)
    ── email/               # Plantillas de correos electrónicos
@@ -77,11 +80,6 @@
    ── validation_utils.py  # Funciones de validación de datos de entrada
    ── __init__.py
 
-
-
-── task/                    # procesamiento en segundo plano (Celery)
-   ── queue_config.py       # configuraciones de la cola
-   ── workers.py            # ejecución de workers
 
 
 
