@@ -1,0 +1,12 @@
+{
+  "name": "conyai-backend",
+  "version": "1.0.0",
+  "description": "ConyAI Backend - Python-based application",
+  "main": "app.py",
+  "scripts": {
+    "test": "echo \"No test specified - this is a Python project\""
+  },
+  "keywords": ["python", "backend", "api"],
+  "author": "",
+  "license": "ISC"
+}
