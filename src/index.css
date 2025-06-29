@@ -5,11 +5,10 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 25%, #fef7ff 50%, #f0fdf4 75%, #fffbeb 100%);
-  min-height: 100vh;
-  color: #64748b;
-  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,513 +17,65 @@ body {
   min-height: 100vh;
 }
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #60a5fa 100%);
-  border: none;
-  color: white;
-  font-weight: 600;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 25px 0 rgba(244, 114, 182, 0.25);
-  position: relative;
-  overflow: hidden;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-primary:hover::before,
-.btn-primary:active::before {
-  left: 100%;
-}
-
-.btn-primary:hover,
-.btn-primary:active {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 35px 0 rgba(244, 114, 182, 0.35);
-}
-
-.btn-secondary {
-  background: linear-gradient(135deg, #a7f3d0 0%, #fde68a 50%, #fed7d7 100%);
-  border: none;
-  color: #374151;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px 0 rgba(167, 243, 208, 0.2);
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-secondary:hover,
-.btn-secondary:active {
-  transform: translateY(-1px) scale(1.01);
-  box-shadow: 0 8px 25px 0 rgba(167, 243, 208, 0.3);
-}
-
-.input-field {
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(244, 114, 182, 0.2);
-  border-radius: 16px;
-  padding: 16px 20px;
+/* Form styles */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   font-size: 16px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #374151;
-  font-weight: 500;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  transition: all 0.2s ease;
 }
 
-.input-field:focus {
-  outline: none;
-  border-color: #f472b6;
-  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.1);
-  background: rgba(255, 255, 255, 1);
-  transform: scale(1.02);
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  transform: none;
 }
 
-.hamster-float {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) rotate(0deg); 
-  }
-  25% { 
-    transform: translateY(-8px) rotate(1deg); 
-  }
-  50% { 
-    transform: translateY(-15px) rotate(0deg); 
-  }
-  75% { 
-    transform: translateY(-8px) rotate(-1deg); 
-  }
-}
-
-.emotion-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 24px;
-  padding: 24px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+/* Button styles */
+button {
+  font-family: inherit;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
 }
 
-.emotion-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(244, 114, 182, 0.05) 0%, rgba(192, 132, 252, 0.05) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+button:disabled {
+  cursor: not-allowed;
 }
 
-.emotion-card:hover::before,
-.emotion-card:active::before {
-  opacity: 1;
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.emotion-card:hover,
-.emotion-card:active {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(244, 114, 182, 0.3);
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 
-.calendar-day {
-  aspect-ratio: 1;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  position: relative;
-  min-height: 70px;
-  border: 2px solid transparent;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.calendar-day:hover,
-.calendar-day:active {
-  transform: scale(1.05);
-  border-color: rgba(244, 114, 182, 0.4);
-}
-
-.calendar-day.has-emotion {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-.calendar-day.has-emotion:hover,
-.calendar-day.has-emotion:active {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Animaciones adicionales */
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-.pulse {
-  animation: pulse 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
-  40%, 43% { transform: translate3d(0, -8px, 0); }
-  70% { transform: translate3d(0, -4px, 0); }
-  90% { transform: translate3d(0, -2px, 0); }
-}
-
-.bounce {
-  animation: bounce 1s infinite;
-}
-
-/* Mejoras en navegación */
-.nav-item {
-  position: relative;
-  overflow: hidden;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.nav-item::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #f472b6, #c084fc);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
-.nav-item.active::after {
-  width: 80%;
-}
-
-/* Scrollbar personalizada */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #f472b6, #c084fc);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #ec4899, #a855f7);
-}
-
-/* Optimizaciones móviles */
-@media (max-width: 768px) {
+/* Mobile optimizations */
+@media (max-width: 640px) {
   body {
     font-size: 14px;
   }
-
-  .glass-effect {
-    margin: 12px;
-    border-radius: 20px;
-  }
   
-  .emotion-card {
-    padding: 20px;
-    border-radius: 20px;
-  }
-  
-  .calendar-day {
-    min-height: 60px;
-    border-radius: 12px;
-    font-size: 14px;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    min-height: 48px;
-    font-size: 16px;
-  }
-
-  .input-field {
-    font-size: 16px;
-    padding: 14px 18px;
-  }
-
-  /* Navegación móvil */
-  .mobile-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
-    z-index: 1000;
-  }
-
-  .mobile-nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .mobile-nav-item.active {
-    background: linear-gradient(135deg, #f472b6, #c084fc);
-    color: white;
-    transform: scale(1.1);
-  }
-
-  .mobile-nav-item span {
-    font-size: 10px;
-    font-weight: 600;
-    margin-top: 4px;
-  }
-
-  /* Ajustes de espaciado móvil */
-  .mobile-container {
-    padding: 16px;
-    padding-bottom: 100px; /* Espacio para navegación inferior */
-  }
-
-  .mobile-header {
-    padding: 20px 16px;
-    text-align: center;
-  }
-
-  .mobile-title {
-    font-size: 28px;
-    margin-bottom: 8px;
-  }
-
-  .mobile-subtitle {
-    font-size: 16px;
-  }
-
-  /* Cards móviles */
-  .mobile-card {
-    margin-bottom: 16px;
-    padding: 20px;
-    border-radius: 20px;
-  }
-
-  /* Calendario móvil */
-  .mobile-calendar {
-    padding: 16px;
-  }
-
-  .mobile-calendar-header {
-    margin-bottom: 20px;
-  }
-
-  .mobile-calendar-nav {
-    padding: 12px;
-    border-radius: 16px;
-  }
-
-  /* Modal móvil */
-  .mobile-modal {
-    margin: 16px;
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
-  /* Perfil móvil */
-  .mobile-profile-header {
-    text-align: center;
-    padding: 24px;
-  }
-
-  .mobile-profile-avatar {
-    font-size: 64px;
-    margin-bottom: 16px;
-  }
-
-  /* Stats móviles */
-  .mobile-stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .mobile-stat-card {
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-  }
-
-  /* Formulario móvil */
-  .mobile-form {
-    padding: 24px;
-  }
-
-  .mobile-form-group {
-    margin-bottom: 20px;
-  }
-
-  .mobile-form-label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  /* Botones móviles */
-  .mobile-button {
-    width: 100%;
-    padding: 16px;
-    border-radius: 16px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
-
-  /* Selector de emociones móvil */
-  .mobile-emotion-selector {
-    max-height: 70vh;
-    overflow-y: auto;
-  }
-
-  .mobile-emotion-button {
-    padding: 16px;
-    margin-bottom: 12px;
-    border-radius: 16px;
-    width: 100%;
-  }
-
-  /* Animaciones reducidas en móvil */
-  .reduce-motion {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .min-h-screen {
+    padding: 1rem;
   }
 }
 
-/* Optimizaciones para pantallas muy pequeñas */
-@media (max-width: 480px) {
-  .glass-effect {
-    margin: 8px;
-    border-radius: 16px;
-  }
-
-  .mobile-container {
-    padding: 12px;
-    padding-bottom: 90px;
-  }
-
-  .mobile-title {
-    font-size: 24px;
-  }
-
-  .mobile-subtitle {
-    font-size: 14px;
-  }
-
-  .calendar-day {
-    min-height: 50px;
-    font-size: 12px;
-  }
-
-  .mobile-card {
-    padding: 16px;
-  }
-}
-
-/* Mejoras en accesibilidad */
-.focus-visible {
-  outline: 3px solid rgba(244, 114, 182, 0.5);
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
-/* Soporte para modo oscuro del sistema */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
-  }
-
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .input-field {
-    background: rgba(255, 255, 255, 0.15);
-    color: #e2e8f0;
-  }
-
-  .emotion-card {
-    background: rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* Soporte para reducción de movimiento */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Mejoras de rendimiento */
-.gpu-accelerated {
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-/* Soporte para notch en dispositivos iOS */
-@supports (padding: max(0px)) {
-  .safe-area-top {
-    padding-top: max(20px, env(safe-area-inset-top));
-  }
-
-  .safe-area-bottom {
-    padding-bottom: max(20px, env(safe-area-inset-bottom));
+/* Prevent zoom on iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 16px;
   }
 }
